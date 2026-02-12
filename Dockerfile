@@ -9,7 +9,7 @@ RUN mvn clean package -DskipTests
 
 
 # -------- STAGE 2 - RUNTIME --------
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
 
