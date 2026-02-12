@@ -1,18 +1,20 @@
-FROM ubuntu:lastest AS build
+# -------- STAGE 1 - BUILD --------
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
 
-
-RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
+WORKDIR /app
 
 COPY . .
 
-FROM openjdk:17-jdk-slint AS runtime
-RUN apt-get install maven -y
-RUN mvn clean install
+RUN mvn clean package -DskipTests
+
+
+# -------- STAGE 2 - RUNTIME --------
+FROM openjdk:17-jdk-slim
+
+WORKDIR /app
+
+COPY --from=builder /app/target/todolist-1.0.0.jar app.jar
 
 EXPOSE 8080
 
-
-COPY --from=builder target/todolist-1.0.0.jar todolistApp.jar
-
-ENTRYPOINT ["java","-jar","/todolistApp.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
