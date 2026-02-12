@@ -1,0 +1,23 @@
+### inserre um  novo usuario
+POST http://localhost:8080/users/
+Content-Type: application/json
+
+{
+    "username": "Ayla",
+    "name": "Ayla Faria",
+    "password": "123456"
+
+}
+
+### insere uma tarefa
+POST http://localhost:8080/tasks/
+Content-Type: application/json
+
+{
+    "description": "Tarefa para gravar aula de Tasks",
+    "title": "Gravação de aula",
+    "priority": "alta",
+    "startAT" : "2024-06-20T10:00:00.525623",
+    "endAT" : "2024-06-20T12:00:00.525623",
+    "idUser": "2101d36d-52ce-495d-8e90-ce876e127d2f"    
+}

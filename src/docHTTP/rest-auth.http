@@ -1,0 +1,47 @@
+### inserir um novo usuario (com Basic Auth)
+# Exemplo de como passar usuário e senha com Basic Auth.
+# 1) Gere o token Base64 de "username:password" (PowerShell):
+#    [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes('admin:admin'))
+# 2) Cole o valor gerado no header abaixo (exemplo abaixo usa user `Ayla Faria` / pass `123456`)
+POST http://localhost:8080/users/
+Content-Type: application/json
+
+{
+    "username": "ayla.faria",
+    "name": "Ayla Faria",
+    "password": "12345"
+
+}
+
+### insere uma tarefa (com Basic Auth) — envie usuário e senha via header
+# Substitua a string Base64 se usar outro par user:pass
+# Base64: ayla.faria:12345
+POST http://localhost:8080/tasks/
+Content-Type: application/json
+Authorization: Basic YXlsYS5mYXJpYToxMjM0NQ==
+
+{
+    "description": "Tarefa para gravar aula de Tasks",
+    "title": "Gravação de aula",
+    "priority": "alta",
+    "startAT" : "2026-02-13T10:00:00.525623",
+    "endAT" : "2026-02-14T15:00:00.525623"
+}
+
+### Consultar lista de tarefas por usuário (com Basic Auth) — envie usuário e senha via header
+GET  http://localhost:8080/tasks/
+Content-Type: application/json
+Authorization: Basic YXlsYS5mYXJpYToxMjM0NQ==
+
+
+### Atualizar tarefa (com Basic Auth)
+# Substitua o UUID {id} pela UUID retornada no GET /tasks/
+# Use PUT para atualizar a tarefa completa
+PUT http://localhost:8080/tasks/219a562d-02a8-48cf-be9e-2dfe0a5c610b
+Authorization: Basic YXlsYS5mYXJpYToxMjM0NQ==
+Content-Type: application/json
+
+{
+    "description": "ALTERADA Tarefa para gravar aula de Tasks - ALTERADA COM SUCESSO",
+    "title": "Gravação de aulaGravação de aulaGravação de aulaGravação de aulaGravação de aulaGravação de aula - ALTERADA COM SUCESSO"
+}
