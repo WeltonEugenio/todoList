@@ -1,0 +1,138 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    PROJETO: TODOLIST - GERENCIADOR DE TAREFAS
+                         TECNOLOGIAS UTILIZADAS
+═══════════════════════════════════════════════════════════════════════════════
+
+📌 BACKEND
+
+  ☕ Java 17
+    - Versão LTS (Long Term Support) da linguagem
+    - Recursos modernos e performance otimizada
+
+  🍃 Spring Boot 4.0.2
+    - Framework principal para desenvolvimento web
+    - Simplifica configuração e desenvolvimento de aplicações Spring
+    - Inclui servidor Tomcat embarcado
+
+  🔐 Spring Security
+    - Segurança e autenticação de usuários
+    - Gerenciamento de filtros de autenticação
+    - Proteção contra vulnerabilidades comuns (CSRF, XSS, etc)
+
+  💾 Spring Data JPA
+    - Acesso a dados e persistência
+    - Mapeamento objeto-relacional (ORM) com Hibernate
+    - Eliminação de código boilerplate de acesso a dados
+
+  📊 H2 Database 2.4.240
+    - Banco de dados em memória (ideal para desenvolvimento)
+    - Console web para visualizar dados
+    - Disponível em http://localhost:8082
+
+  🔧 Lombok
+    - Redução de código boilerplate (getters, setters, constructores)
+    - Annotations para geração automática de código
+    - @Data, @Getter, @Setter, @NoArgsConstructor, @AllArgsConstructor
+
+  🔐 BCrypt 0.10.2
+    - Hash seguro de senhas
+    - Senhas armazenadas de forma criptografada
+    - Implementação padrão da indústria
+
+  🚀 Spring Boot DevTools 4.0.2
+    - Live reload durante desenvolvimento
+    - Restart automático da aplicação
+    - Aumenta produtividade durante coding
+
+  📊 Spring Boot Actuator
+    - Endpoints para monitoramento
+    - Health checks e métricas
+    - Observabilidade da aplicação
+
+  🧪 JUnit 5 + Mockito
+    - Framework de testes unitários
+    - Mock de objetos para testes isolados
+    - Configuração automática com Spring Boot Test
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🛠️ BUILD & DEPLOYMENT
+
+  🏗️ Maven 3.8+
+    - Gerenciador de dependências
+    - Build automation
+    - Execução de testes e compilação
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 PRINCIPAIS CARACTERÍSTICAS DO PROJETO
+
+  ✅ API RESTful para gerenciar tarefas
+  ✅ Autenticação e autorização de usuários
+  ✅ Banco de dados relacional com JPA
+  ✅ Senhas criptografadas com BCrypt
+  ✅ Filtros de autenticação customizados
+  ✅ Testes unitários automatizados
+  ✅ H2 Console para debug de dados
+  ✅ Profiles de ambiente (dev, prod)
+  ✅ Exception handling e erros customizados
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 DICAS PARA INICIANTES EM SPRING BOOT
+
+1️⃣  LOMBOK - Reduza seu código:
+    - Use @Data para combinar @Getter, @Setter, @EqualsAndHashCode
+    - Economiza muitas linhas de getters/setters
+
+2️⃣  SPRING SECURITY - Segurança é essencial:
+    - Sempre criptografe senhas (BCrypt)
+    - Configure filtros para rotas protegidas
+    - Use tokens para API stateless
+
+3️⃣  JPA/HIBERNATE - Trabalhe com objetos:
+    - Não escreva SQL direto quando possível
+    - Use repositories para abstrair acesso a dados
+    - Relacionamentos @OneToMany, @ManyToOne simplificam consultas
+
+4️⃣  DEVTOOLS - Aumente sua produtividade:
+    - Spring Boot DevTools permite reload sem reiniciar a app
+    - Economiza tempo durante desenvolvimento
+
+5️⃣  TESTES - Code com confiança:
+    - Use @SpringBootTest para testes de contexto completo
+    - Mock dependências com Mockito
+    - Teste suas APIs com MockMvc
+
+6️⃣  PROFILES - Ambientes diferentes:
+    - Use @Profile("dev") para configurações de desenvolvimento
+    - Use @Profile("prod") para produção
+    - H2 é ótimo para dev, mas use PostgreSQL/MySQL em produção
+
+7️⃣  FILTERS - Customização de requisições:
+    - Implemente HttpFilter para interceptar requisições
+    - Útil para autenticação, logging, validação
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔗 LINKS ÚTEIS
+
+  Spring Boot Docs: https://spring.io/projects/spring-boot
+  Spring Security: https://spring.io/projects/spring-security
+  Lombok: https://projectlombok.org/
+  JPA Docs: https://spring.io/projects/spring-data-jpa
+  BCrypt: https://www.mindrot.org/projects/jBCrypt/
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 PRÓXIMOS PASSOS
+
+  • Implementar autenticação JWT
+  • Adicionar testes de integração
+  • Deploy em servidor (Heroku, Railway, AWS)
+  • Migrar para banco de dados PostgreSQL/MySQL
+  • Implementar cache com Redis
+  • Dockerização da aplicação
+  • CI/CD com GitHub Actions
+
+═══════════════════════════════════════════════════════════════════════════════
